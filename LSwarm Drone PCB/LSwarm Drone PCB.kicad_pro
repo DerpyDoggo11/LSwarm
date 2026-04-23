@@ -630,16 +630,6 @@
         "filename": "LSwarm Drone PCB.kicad_sch",
         "name": "RP2350",
         "uuid": "f914089f-8107-4513-a595-68edd26170d4"
-      },
-      {
-        "filename": "esp32-c3.kicad_sch",
-        "name": "ESP32-C3",
-        "uuid": "a3909ff0-a1d4-4738-89d9-01e74743db1c"
-      },
-      {
-        "filename": "peripherals.kicad_sch",
-        "name": "Peripherals",
-        "uuid": "4c396e00-10c4-408e-b7d6-6196904b6155"
       }
     ],
     "used_designators": "",
@@ -649,14 +639,6 @@
     [
       "f914089f-8107-4513-a595-68edd26170d4",
       "RP2350"
-    ],
-    [
-      "a3909ff0-a1d4-4738-89d9-01e74743db1c",
-      "ESP32-C3"
-    ],
-    [
-      "4c396e00-10c4-408e-b7d6-6196904b6155",
-      "Peripherals"
     ]
   ],
   "text_variables": {},
