@@ -2456,7 +2456,7 @@
 		(uuid "4135350c-cb7d-4d50-a7c1-4547f7208d8c")
 	)
 	(junction
-		(at 34.29 107.95)
+		(at 35.56 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43e15c9f-ba56-4ede-a05b-ac55e8caf1ee")
@@ -2468,7 +2468,7 @@
 		(uuid "530f9cf7-ea15-453b-a5d7-ffec3ddf6b71")
 	)
 	(junction
-		(at 154.94 38.1)
+		(at 156.21 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5845228a-f0f7-40f3-abea-50e647d8735f")
@@ -2492,10 +2492,16 @@
 		(uuid "73404811-9231-476e-ab19-b75b3977fce0")
 	)
 	(junction
-		(at 154.94 45.72)
+		(at 156.21 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "812eeecf-9da5-4cee-9596-9970fea70599")
+	)
+	(junction
+		(at 146.05 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "855969ec-eea5-479b-9221-4b670e1f3a2b")
 	)
 	(junction
 		(at 62.23 25.4)
@@ -2510,12 +2516,6 @@
 		(uuid "8be851ac-3dc4-476f-b8d3-904e1ef63797")
 	)
 	(junction
-		(at 144.78 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9132db92-0f98-4768-b44a-acdbe7fef6b1")
-	)
-	(junction
 		(at 48.26 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2528,7 +2528,7 @@
 		(uuid "c174f930-92fe-4cd7-a497-cc9d4f704142")
 	)
 	(junction
-		(at 35.56 107.95)
+		(at 36.83 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c716ac01-42c5-4b02-b0a8-7414167aa533")
@@ -2546,7 +2546,7 @@
 		(uuid "e132d9ba-f3a7-4f37-ad63-18ff2f88abd3")
 	)
 	(junction
-		(at 36.83 115.57)
+		(at 38.1 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e43e393c-3538-4ae2-bde6-d22cb5ced2c4")
@@ -2576,12 +2576,20 @@
 		(uuid "ebd34f2b-63e8-4904-aca5-dadafb67b8a6")
 	)
 	(no_connect
-		(at 41.91 113.03)
+		(at 43.18 113.03)
 		(uuid "1bbaa255-f72b-4925-ac71-c35f1d187774")
 	)
 	(no_connect
-		(at 52.07 107.95)
+		(at 53.34 107.95)
 		(uuid "1c30c623-fbb9-4f73-8d28-efaafcc42f3f")
+	)
+	(no_connect
+		(at 123.19 53.34)
+		(uuid "303e324f-4bf0-437e-a502-73ba23a0b853")
+	)
+	(no_connect
+		(at 123.19 50.8)
+		(uuid "49804de2-01e1-46f5-b074-304bc5ac4e9b")
 	)
 	(no_connect
 		(at 123.19 63.5)
@@ -2590,6 +2598,10 @@
 	(no_connect
 		(at 123.19 66.04)
 		(uuid "6214b740-771e-48c1-a681-2b907ed52b54")
+	)
+	(no_connect
+		(at 123.19 48.26)
+		(uuid "9365cca3-cdbc-428d-b2c2-d2e6dc7b556a")
 	)
 	(no_connect
 		(at 123.19 73.66)
@@ -2614,6 +2626,10 @@
 	(no_connect
 		(at 123.19 68.58)
 		(uuid "f1e3292e-35a4-4ed4-b509-5c19ab508e8c")
+	)
+	(no_connect
+		(at 123.19 55.88)
+		(uuid "f5eb3a6f-9388-4239-8ad4-1af7a7d19bf3")
 	)
 	(wire
 		(pts
@@ -2645,16 +2661,6 @@
 		)
 		(uuid "10c625ae-105f-4914-a5e8-e73b43605791")
 	)
-	(wire
-		(pts
-			(xy 144.78 38.1) (xy 146.05 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14bb896e-b513-4e11-a961-d1971eb38523")
-	)
 	(polyline
 		(pts
 			(xy 59.7336 15.826) (xy 59.7336 27.2338)
@@ -2677,7 +2683,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 38.1) (xy 154.94 38.1)
+			(xy 154.94 38.1) (xy 156.21 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2727,7 +2733,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 115.57) (xy 36.83 115.57)
+			(xy 35.56 115.57) (xy 38.1 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2737,7 +2743,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 107.95) (xy 34.29 107.95)
+			(xy 31.75 107.95) (xy 35.56 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2767,7 +2773,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 115.57) (xy 52.07 115.57)
+			(xy 38.1 115.57) (xy 53.34 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2837,7 +2843,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 107.95) (xy 35.56 107.95)
+			(xy 35.56 107.95) (xy 36.83 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2847,7 +2853,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 101.6) (xy 35.56 107.95)
+			(xy 36.83 101.6) (xy 36.83 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2947,7 +2953,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 38.1) (xy 144.78 38.1)
+			(xy 123.19 38.1) (xy 146.05 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2967,7 +2973,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 107.95) (xy 41.91 107.95)
+			(xy 36.83 107.95) (xy 43.18 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3027,7 +3033,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 113.03) (xy 52.07 115.57)
+			(xy 53.34 113.03) (xy 53.34 115.57)
 		)
 		(stroke
 			(width 0)
@@ -3097,7 +3103,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 45.72) (xy 154.94 45.72)
+			(xy 146.05 45.72) (xy 156.21 45.72)
 		)
 		(stroke
 			(width 0)
@@ -3107,13 +3113,23 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 38.1) (xy 162.56 38.1)
+			(xy 156.21 38.1) (xy 163.83 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "dff0b842-9b25-491a-839e-ecb6b4f1e6a2")
+	)
+	(wire
+		(pts
+			(xy 146.05 38.1) (xy 147.32 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e05d93ad-08e9-45d0-938e-7012d8c0393b")
 	)
 	(polyline
 		(pts
@@ -3156,7 +3172,7 @@
 		(uuid "3122b870-de38-4379-ad3d-eae3fe1ccc13")
 	)
 	(label "BOOT"
-		(at 55.88 46.99 0)
+		(at 53.34 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3165,7 +3181,7 @@
 		)
 		(uuid "5be534bf-cfec-4e36-b88d-0eafafa28a76")
 	)
-	(global_label "ESP32_UORXD"
+	(global_label "RP2350_GPIO_16"
 		(shape input)
 		(at 77.47 60.96 180)
 		(fields_autoplaced yes)
@@ -3175,9 +3191,33 @@
 			)
 			(justify right)
 		)
-		(uuid "1220c5be-8078-4920-a7c7-d3b6e4ee9925")
+		(uuid "0c5376f8-c5d1-4b40-8a17-7a833d121937")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 61.0592 60.96 0)
+			(at 58.2773 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_15"
+		(shape input)
+		(at 77.47 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "11066d74-d11a-4b0c-851b-d39709ec45b6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 58.2773 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3213,55 +3253,7 @@
 			)
 		)
 	)
-	(global_label "RP2350_SPIO_MOSI"
-		(shape input)
-		(at 123.19 55.88 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1d5fdb4a-a1cd-43d8-b8d2-68e66a9cec1b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.4994 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_18"
-		(shape input)
-		(at 41.91 50.8 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2aa9f83a-1f4d-45b8-bcfc-b8bffb8eb956")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.7722 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "RP2350_SPIO_SS"
+	(global_label "RP2350_GPIO_13"
 		(shape input)
 		(at 77.47 48.26 180)
 		(fields_autoplaced yes)
@@ -3273,7 +3265,7 @@
 		)
 		(uuid "2b2b52dd-f09f-485c-ada7-0df3800a3b15")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 58.3378 48.26 0)
+			(at 58.2773 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3298,78 +3290,6 @@
 		(uuid "2be740db-d4a4-4f00-9847-9746f22b14ad")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 60.8173 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_19"
-		(shape input)
-		(at 41.91 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2d8f8c7d-2a12-458f-bb0c-b0a2a8cd82d8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.7722 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "ESP32_CHIP_EN"
-		(shape input)
-		(at 123.19 43.18 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2f5a5ae6-50a1-460e-9207-66d516f53547")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 141.1127 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_18"
-		(shape input)
-		(at 77.47 50.8 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "44c392fe-e9d6-489d-bcb3-c3dcf63ca714")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.6078 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3429,30 +3349,6 @@
 			)
 		)
 	)
-	(global_label "ESP32_GPIO_4"
-		(shape input)
-		(at 123.19 48.26 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "587a0248-c4a7-42ea-b539-8c168edd4dcd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 139.8427 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "ESP32_40M_X1"
 		(shape input)
 		(at 77.47 71.12 180)
@@ -3477,9 +3373,9 @@
 			)
 		)
 	)
-	(global_label "ESP32_CHIP_EN"
+	(global_label "ESP32_GPIO_19"
 		(shape input)
-		(at 31.75 85.09 180)
+		(at 77.47 53.34 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3487,9 +3383,33 @@
 			)
 			(justify right)
 		)
-		(uuid "74a71cf1-60a4-441a-84e8-0798fbe46b7f")
+		(uuid "5ff84210-5d2e-49bf-8d83-f8303c52107e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 13.8273 85.09 0)
+			(at 59.6078 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_15"
+		(shape input)
+		(at 31.75 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7fe4b518-9ede-4908-993b-48a5fe9625cf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 12.5573 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3525,7 +3445,7 @@
 			)
 		)
 	)
-	(global_label "RP2350_SPIO_MOSI"
+	(global_label "RP2350_GPIO_12"
 		(shape input)
 		(at 77.47 38.1 180)
 		(fields_autoplaced yes)
@@ -3537,31 +3457,7 @@
 		)
 		(uuid "83fcb87c-a7bb-4f48-af12-1daea0dc30e6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 56.1606 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_9"
-		(shape input)
-		(at 77.47 45.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8967773c-ebb0-45bd-989c-5a5eaf1e82fd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.8173 45.72 0)
+			(at 58.2773 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3597,6 +3493,30 @@
 			)
 		)
 	)
+	(global_label "RP2350_GPIO_14"
+		(shape input)
+		(at 123.19 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "98744001-47fd-4041-b838-ac769a4969f3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.3827 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "ESP32_GPIO_8"
 		(shape input)
 		(at 77.47 43.18 180)
@@ -3618,30 +3538,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "RP2350_SPIO_SCK"
-		(shape input)
-		(at 123.19 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9d79c0f6-6c93-43ee-99da-fc41a1b64137")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 143.6527 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -3669,30 +3565,6 @@
 			)
 		)
 	)
-	(global_label "ESP32_USB_DN"
-		(shape input)
-		(at 34.29 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9f2ba724-6691-4a42-b7e7-961d03e48f2a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.9116 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "ESP32_VDD_SPI"
 		(shape input)
 		(at 116.84 17.78 0)
@@ -3714,30 +3586,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_19"
-		(shape input)
-		(at 77.47 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a7505a51-e0b0-439f-b3ee-b5fe60965d85")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.6078 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 	)
@@ -3765,78 +3613,6 @@
 			)
 		)
 	)
-	(global_label "ESP32_USB_DP"
-		(shape input)
-		(at 34.29 50.8 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d3e656ec-e4e4-40fc-ba16-727ff5ec9e5a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.9721 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_9"
-		(shape input)
-		(at 30.48 107.95 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d3ecc7e1-8065-49ac-9e6f-1f60cb07fd8d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 13.8273 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "ESP32_GPIO_5"
-		(shape input)
-		(at 123.19 50.8 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e091b9e2-0d22-4e8c-a884-973ad93365bc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 139.8427 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "ESP32_40M_X0"
 		(shape input)
 		(at 77.47 73.66 180)
@@ -3861,7 +3637,31 @@
 			)
 		)
 	)
-	(global_label "ESP32_UOTXD"
+	(global_label "ESP32_GPIO_18"
+		(shape input)
+		(at 77.47 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f750461d-351b-4f9d-a3a3-b182e48df0c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.6078 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_17"
 		(shape input)
 		(at 77.47 58.42 180)
 		(fields_autoplaced yes)
@@ -3871,9 +3671,33 @@
 			)
 			(justify right)
 		)
-		(uuid "f502472f-887a-4950-8fcc-33d2d1e7b404")
+		(uuid "f9b1ad2b-0a60-4fe7-a282-b2c47580e9b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 61.3616 58.42 0)
+			(at 58.2773 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_14"
+		(shape input)
+		(at 31.75 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fe5a814b-02fd-44ce-9e04-25ff55a9de11")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 12.5573 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3960,6 +3784,12 @@
 		(instances
 			(project "esp32-c3"
 				(path "/6b0a780d-292b-40d6-a211-21b976980805"
+					(reference "C34")
+					(unit 1)
+				)
+			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
 					(reference "C34")
 					(unit 1)
 				)
@@ -4061,10 +3891,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "141a48bc-12e2-45c7-84b4-ed26e47f8f1d")
 		(property "Reference" "U5"
-			(at 102.4733 83.82 0)
+			(at 99.06 60.706 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4075,7 +3904,7 @@
 			)
 		)
 		(property "Value" "ESP32-C3"
-			(at 102.4733 86.36 0)
+			(at 95.504 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4392,11 +4221,17 @@
 					(unit 1)
 				)
 			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 34.29 111.76 0)
+		(at 35.56 111.76 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4406,7 +4241,7 @@
 		(dnp no)
 		(uuid "23dfbe25-a0ee-4d31-a71f-1c30a2a59f3f")
 		(property "Reference" "C31"
-			(at 27.94 110.998 0)
+			(at 29.21 110.998 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4417,7 +4252,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 25.908 112.776 0)
+			(at 27.178 112.776 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4428,7 +4263,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.2552 115.57 0)
+			(at 36.5252 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4439,7 +4274,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 111.76 0)
+			(at 35.56 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4450,7 +4285,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 34.29 111.76 0)
+			(at 35.56 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4859,7 +4694,7 @@
 	)
 	(symbol
 		(lib_id "SKRPACE010:SKRPACE010")
-		(at 46.99 110.49 0)
+		(at 48.26 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4870,7 +4705,7 @@
 		(fields_autoplaced yes)
 		(uuid "473f1fa6-b80f-4ba6-b250-61e66e33cfc4")
 		(property "Reference" "S4"
-			(at 46.99 102.87 0)
+			(at 48.26 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4880,7 +4715,7 @@
 			)
 		)
 		(property "Value" "SKRPACE010"
-			(at 46.99 105.41 0)
+			(at 48.26 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4890,7 +4725,7 @@
 			)
 		)
 		(property "Footprint" "SKRPACE010:SW_SKRPACE010"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4902,7 +4737,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4913,7 +4748,7 @@
 			)
 		)
 		(property "Description" "Switch Tactile N.O. SPST Button J-Bend 0.05A 16VDC 2.55N SMD Automotive T/R"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4925,7 +4760,7 @@
 			)
 		)
 		(property "MF" "ALPS"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4937,7 +4772,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4949,7 +4784,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4961,7 +4796,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/SKRPACE010/ALPS/view-part/?ref=eda"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4973,7 +4808,7 @@
 			)
 		)
 		(property "STANDARD" "Maniufacturer Recommendations"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4985,7 +4820,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SKRPACE010/ALPS/view-part/?ref=snap"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4997,7 +4832,7 @@
 			)
 		)
 		(property "MP" "SKRPACE010"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5009,7 +4844,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5021,7 +4856,7 @@
 			)
 		)
 		(property "MANUFACTURER" "ALPS"
-			(at 46.99 110.49 0)
+			(at 48.26 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5061,7 +4896,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 36.83 115.57 0)
+		(at 38.1 115.57 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5072,7 +4907,7 @@
 		(fields_autoplaced yes)
 		(uuid "52bf7faa-27ff-487a-9145-9da790b4fea8")
 		(property "Reference" "#PWR037"
-			(at 36.83 121.92 0)
+			(at 38.1 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5083,7 +4918,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 36.83 120.65 0)
+			(at 38.1 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5093,7 +4928,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 36.83 115.57 0)
+			(at 38.1 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5104,7 +4939,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 36.83 115.57 0)
+			(at 38.1 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5115,7 +4950,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 36.83 115.57 0)
+			(at 38.1 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5214,6 +5049,12 @@
 		(instances
 			(project "esp32-c3"
 				(path "/6b0a780d-292b-40d6-a211-21b976980805"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
 					(reference "#PWR01")
 					(unit 1)
 				)
@@ -5470,6 +5311,12 @@
 					(unit 1)
 				)
 			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
+					(reference "C37")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -5543,6 +5390,12 @@
 		(instances
 			(project "esp32-c3"
 				(path "/6b0a780d-292b-40d6-a211-21b976980805"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
 					(reference "#PWR029")
 					(unit 1)
 				)
@@ -6001,91 +5854,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 38.1 50.8 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9da71e01-bded-4768-92f4-ee276f5a9ad5")
-		(property "Reference" "R9"
-			(at 34.544 48.514 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22"
-			(at 38.1 51.054 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.1 52.578 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 38.1 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "00dbffbb-17c8-40ad-a42e-d0a08f448010")
-		)
-		(pin "2"
-			(uuid "4c159288-9019-4d30-bfac-b8b7440ffdf2")
-		)
-		(instances
-			(project "esp32-c3"
-				(path "/6b0a780d-292b-40d6-a211-21b976980805"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-			(project "LSwarm Drone PCB"
-				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 29.21 78.74 0)
 		(unit 1)
@@ -6255,7 +6023,7 @@
 	)
 	(symbol
 		(lib_id "ANT3216LL00R2400A:ANT3216LL00R2400A")
-		(at 162.56 38.1 0)
+		(at 163.83 38.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6265,7 +6033,7 @@
 		(dnp no)
 		(uuid "af9e401b-4e4b-4fa2-9bf2-7936db2a8602")
 		(property "Reference" "ANT1"
-			(at 171.958 31.496 0)
+			(at 173.228 31.496 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6276,7 +6044,7 @@
 			)
 		)
 		(property "Value" "ANT3216LL00R2400A"
-			(at 165.354 34.036 0)
+			(at 166.624 34.036 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6287,7 +6055,7 @@
 			)
 		)
 		(property "Footprint" "ANT3216LL00R2400A:ANTC3216X135N"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6299,7 +6067,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6310,7 +6078,7 @@
 			)
 		)
 		(property "Description" "2.45GHz Bluetooth, ISM, Wi-Fi, Zigbee™ Chip RF Antenna 2.4GHz ~ 2.5GHz 5.05dBi Solder Surface Mount"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6322,7 +6090,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "YAGEO (PHYCOMP)"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6334,7 +6102,7 @@
 			)
 		)
 		(property "MF" "Yageo"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6346,7 +6114,7 @@
 			)
 		)
 		(property "Mouser_Price-Stock" "https://www.mouser.co.uk/ProductDetail/Yageo/ANT3216LL00R2400A?qs=VAB4DzKv5wVywAIgVVebaA%3D%3D"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6358,7 +6126,7 @@
 			)
 		)
 		(property "Mouser_Part_Number" "603-ANT3216LL00R2400"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6370,7 +6138,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6382,7 +6150,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6394,7 +6162,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/ANT3216LL00R2400A/Yageo/view-part/?ref=eda"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6406,7 +6174,7 @@
 			)
 		)
 		(property "Height" "1.35mm"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6418,7 +6186,7 @@
 			)
 		)
 		(property "MP" "ANT3216LL00R2400A"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6430,7 +6198,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/ANT3216LL00R2400A/Yageo/view-part/?ref=snap"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6442,7 +6210,7 @@
 			)
 		)
 		(property "Arrow_Price-Stock" "https://www.arrow.com/en/products/ant3216ll00r2400a/yageo"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6454,7 +6222,7 @@
 			)
 		)
 		(property "Arrow_Part_Number" "ANT3216LL00R2400A"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6466,7 +6234,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6478,7 +6246,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ANT3216LL00R2400A"
-			(at 162.56 38.1 0)
+			(at 163.83 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6512,7 +6280,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 154.94 45.72 0)
+		(at 156.21 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6523,7 +6291,7 @@
 		(fields_autoplaced yes)
 		(uuid "c00e9eac-6901-4bd0-85c5-afd0eacfb01e")
 		(property "Reference" "#PWR026"
-			(at 154.94 52.07 0)
+			(at 156.21 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6534,7 +6302,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 154.94 50.8 0)
+			(at 156.21 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6544,7 +6312,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 154.94 45.72 0)
+			(at 156.21 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6555,7 +6323,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 154.94 45.72 0)
+			(at 156.21 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6566,7 +6334,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 154.94 45.72 0)
+			(at 156.21 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6683,7 +6451,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 154.94 41.91 0)
+		(at 156.21 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6693,7 +6461,7 @@
 		(dnp no)
 		(uuid "c6888133-7161-46ea-88fc-b0634c26cd61")
 		(property "Reference" "C26"
-			(at 156.21 39.624 0)
+			(at 157.48 39.624 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6704,7 +6472,7 @@
 			)
 		)
 		(property "Value" "3.3pF"
-			(at 156.21 44.45 0)
+			(at 157.48 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6715,7 +6483,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 155.9052 45.72 0)
+			(at 157.1752 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6726,7 +6494,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 154.94 41.91 0)
+			(at 156.21 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6737,7 +6505,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 154.94 41.91 0)
+			(at 156.21 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6857,7 +6625,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 31.75 101.6 90)
+		(at 33.02 101.6 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6867,7 +6635,7 @@
 		(dnp no)
 		(uuid "c95126d8-740a-4c13-a317-13b80e410246")
 		(property "Reference" "R13"
-			(at 31.75 104.14 90)
+			(at 33.02 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6877,7 +6645,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 31.75 101.6 90)
+			(at 33.02 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6887,7 +6655,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 103.378 90)
+			(at 33.02 103.378 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6898,7 +6666,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 101.6 0)
+			(at 33.02 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6909,7 +6677,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 31.75 101.6 0)
+			(at 33.02 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7108,93 +6876,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 38.1 53.34 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "df9c336f-f5f0-4278-9e68-07c4318cacf3")
-		(property "Reference" "R10"
-			(at 35.306 55.372 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22"
-			(at 38.1 53.594 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.1 55.118 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 38.1 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "27572ee6-6d94-4de0-ba65-26abf7682097")
-		)
-		(pin "2"
-			(uuid "79ecf3a9-2f2c-481c-9344-5eb8efb0f988")
-		)
-		(instances
-			(project "esp32-c3"
-				(path "/6b0a780d-292b-40d6-a211-21b976980805"
-					(reference "R10")
-					(unit 1)
-				)
-			)
-			(project "LSwarm Drone PCB"
-				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
-					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
-		(at 27.94 101.6 0)
+		(at 29.21 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7204,7 +6887,7 @@
 		(dnp no)
 		(uuid "e083f725-35ab-4dbd-9907-595483ffe12b")
 		(property "Reference" "#PWR036"
-			(at 27.94 105.41 0)
+			(at 29.21 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7215,7 +6898,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 24.13 99.06 0)
+			(at 25.4 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7225,7 +6908,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 101.6 0)
+			(at 29.21 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7236,7 +6919,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 101.6 0)
+			(at 29.21 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7247,7 +6930,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 27.94 101.6 0)
+			(at 29.21 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7361,7 +7044,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 149.86 38.1 90)
+		(at 151.13 38.1 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7372,7 +7055,7 @@
 		(fields_autoplaced yes)
 		(uuid "e71a6c86-d39d-4d13-ac28-cf10933dd7cf")
 		(property "Reference" "L2"
-			(at 149.86 33.02 90)
+			(at 151.13 33.02 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7382,7 +7065,7 @@
 			)
 		)
 		(property "Value" "2.2nH"
-			(at 149.86 35.56 90)
+			(at 151.13 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7392,7 +7075,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 38.1 0)
+			(at 151.13 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7403,7 +7086,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 38.1 0)
+			(at 151.13 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7414,7 +7097,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 149.86 38.1 0)
+			(at 151.13 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7609,11 +7292,17 @@
 					(unit 1)
 				)
 			)
+			(project "LSwarm Drone PCB"
+				(path "/a3909ff0-a1d4-4738-89d9-01e74743db1c"
+					(reference "C36")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 144.78 41.91 0)
+		(at 146.05 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7623,7 +7312,7 @@
 		(dnp no)
 		(uuid "f8eae2c4-f208-42a3-a467-773447852601")
 		(property "Reference" "C25"
-			(at 146.05 39.624 0)
+			(at 147.32 39.624 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7634,7 +7323,7 @@
 			)
 		)
 		(property "Value" "3.3pF"
-			(at 146.05 44.45 0)
+			(at 147.32 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7645,7 +7334,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 145.7452 45.72 0)
+			(at 147.0152 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7656,7 +7345,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 41.91 0)
+			(at 146.05 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7667,7 +7356,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 144.78 41.91 0)
+			(at 146.05 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
