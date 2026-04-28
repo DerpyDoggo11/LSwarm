@@ -20687,7 +20687,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "47a83461-64d3-41a5-83cb-ff991e19019f")
-		(property "Reference" "LED3"
+		(property "Reference" "LED2"
 			(at 432.562 31.242 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20790,7 +20790,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "LED3")
+					(reference "LED2")
 					(unit 1)
 				)
 			)
@@ -20886,8 +20886,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "491ee910-fc8e-4c9c-931b-7daa2d12ef9d")
-		(property "Reference" "U6"
-			(at 190.5 206.756 0)
+		(property "Reference" "ESP32"
+			(at 188.468 207.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21043,7 +21043,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "U6")
+					(reference "ESP32")
 					(unit 1)
 				)
 			)
@@ -21974,7 +21974,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5696bb31-9f45-47a4-bb05-0c344d7388d4")
-		(property "Reference" "U1"
+		(property "Reference" "RP2350"
 			(at 163.4333 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -22238,7 +22238,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "U1")
+					(reference "RP2350")
 					(unit 1)
 				)
 			)
@@ -22255,7 +22255,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "57df27fa-4f86-49ab-891e-71e9a3bd8cae")
-		(property "Reference" "LED4"
+		(property "Reference" "LED3"
 			(at 457.962 31.242 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22358,7 +22358,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "LED4")
+					(reference "LED3")
 					(unit 1)
 				)
 			)
@@ -27969,7 +27969,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ab87a42d-fc75-4fb2-adb5-039b3501bb00")
-		(property "Reference" "U4"
+		(property "Reference" "FLASH"
 			(at 20.32 104.902 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28051,7 +28051,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "U4")
+					(reference "FLASH")
 					(unit 1)
 				)
 			)
@@ -31923,7 +31923,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc18cb64-0830-453f-9e1d-0269fd135df1")
-		(property "Reference" "LED5"
+		(property "Reference" "LED4"
 			(at 483.362 31.242 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32026,7 +32026,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "LED5")
+					(reference "LED4")
 					(unit 1)
 				)
 			)
@@ -33623,7 +33623,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fad82eb6-5d9f-4879-8290-753970a6f045")
-		(property "Reference" "LED2"
+		(property "Reference" "LED1"
 			(at 408.432 31.242 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33726,7 +33726,7 @@
 		(instances
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "LED2")
+					(reference "LED1")
 					(unit 1)
 				)
 			)
