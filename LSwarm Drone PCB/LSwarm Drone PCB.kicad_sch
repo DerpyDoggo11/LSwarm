@@ -7006,52 +7006,34 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:AO3401A"
-			(pin_names
-				(hide yes)
-			)
+		(symbol "easyeda2kicad:AO3407A"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "Q"
-				(at 5.08 1.905 0)
+				(at 0 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "AO3401A"
-				(at 5.08 0 0)
+			(property "Value" "AO3407A"
+				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-				(at 5.08 -3.81 0)
+			(property "Footprint" "easyeda2kicad:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
+				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -7059,10 +7041,20 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(property "Datasheet" "https://lcsc.com/product-detail/MOSFET_AOS_AO3407A_AO3407A_C15155.html"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "AO3407A"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7073,7 +7065,40 @@
 					)
 				)
 			)
-			(property "ki_keywords" "P-Channel MOSFET"
+			(property "Manufacturer" "AOS"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "AO3407A"
+				(at 0 -20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C15155"
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "MOSFETs"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -7084,33 +7109,10 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "AO3401A_0_1"
+			(symbol "AO3407A_0_1"
 				(polyline
 					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
+						(xy -2.54 0) (xy -0.51 0)
 					)
 					(stroke
 						(width 0)
@@ -7122,19 +7124,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+						(xy -0.51 2.29) (xy -0.51 -2.29)
 					)
 					(stroke
 						(width 0)
@@ -7146,88 +7136,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+						(xy 0 1.27) (xy 0 2.29)
 					)
 					(stroke
 						(width 0)
@@ -7239,7 +7148,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+						(xy 0 0) (xy 2.54 0) (xy 2.54 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -7251,7 +7160,7 @@
 				)
 				(polyline
 					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+						(xy 0 -0.51) (xy 0 0.51)
 					)
 					(stroke
 						(width 0)
@@ -7261,9 +7170,103 @@
 						(type none)
 					)
 				)
-			)
-			(symbol "AO3401A_1_1"
-				(pin input line
+				(polyline
+					(pts
+						(xy 0 -2.29) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.78) (xy 0 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.78) (xy 2.54 2.54) (xy 5.08 2.54) (xy 5.08 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.02 0.51) (xy 1.02 -0.51) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.78) (xy 0 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 5.08 -2.54) (xy 5.08 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -0.51) (xy 5.84 0.76) (xy 4.32 0.76) (xy 5.08 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.84 -0.51) (xy 5.59 -0.51) (xy 4.57 -0.51) (xy 4.32 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
 					(at -5.08 0 0)
 					(length 2.54)
 					(name "G"
@@ -7281,7 +7284,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 2.54 -5.08 90)
 					(length 2.54)
 					(name "S"
@@ -7299,7 +7302,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 2.54 5.08 270)
 					(length 2.54)
 					(name "D"
@@ -9822,6 +9825,12 @@
 		(uuid "08ee58af-b2a3-46c6-ba97-c31255dc735c")
 	)
 	(junction
+		(at 280.67 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0a2ca5ec-9c06-403a-bac9-bb88325db9c6")
+	)
+	(junction
 		(at 74.93 210.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9966,6 +9975,12 @@
 		(uuid "3784e4ac-b5b5-4662-8560-cebc0d34c60b")
 	)
 	(junction
+		(at 365.76 224.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37975a49-264e-4b6d-8bf5-dfde21a17336")
+	)
+	(junction
 		(at 87.63 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10066,12 +10081,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "53aa4caf-5b9a-497b-b27e-6e117f15fa6f")
-	)
-	(junction
-		(at 365.76 224.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "567e6595-ccdb-4a43-b925-da16443acb97")
 	)
 	(junction
 		(at 247.65 184.15)
@@ -10204,12 +10213,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "86577a3e-1a57-46bf-ad95-cadfd0641fcf")
-	)
-	(junction
-		(at 360.68 232.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "89b7d4b8-2b6b-4683-987d-4184e68bb7c0")
 	)
 	(junction
 		(at 53.34 264.16)
@@ -10474,6 +10477,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "efd6f5c1-bacf-4cc7-8f8b-70a89382e485")
+	)
+	(junction
+		(at 360.68 232.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f034ba26-1382-489b-8683-21b54ff0a6b5")
 	)
 	(junction
 		(at 254 146.05)
@@ -11117,16 +11126,6 @@
 	)
 	(wire
 		(pts
-			(xy 283.21 100.33) (xy 283.21 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b60b1c5-a473-4fe8-ad6c-b4261f7891d4")
-	)
-	(wire
-		(pts
 			(xy 48.26 137.16) (xy 54.61 137.16)
 		)
 		(stroke
@@ -11424,6 +11423,16 @@
 			(type default)
 		)
 		(uuid "4357c24b-074e-4265-a659-d02b999c36b3")
+	)
+	(wire
+		(pts
+			(xy 285.75 100.33) (xy 285.75 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "439d8b9d-a801-4263-b60c-1b4abb3b4e09")
 	)
 	(wire
 		(pts
@@ -12027,6 +12036,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 100.33) (xy 280.67 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7676f9d2-c905-44bf-aa41-821755a5703b")
+	)
+	(wire
+		(pts
 			(xy 477.52 20.32) (xy 477.52 22.86)
 		)
 		(stroke
@@ -12044,6 +12063,16 @@
 			(type default)
 		)
 		(uuid "78f98b32-1eba-46b2-85f8-b1054f007968")
+	)
+	(wire
+		(pts
+			(xy 285.75 110.49) (xy 289.56 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79be2511-5e78-44ee-8c11-77d425153d10")
 	)
 	(wire
 		(pts
@@ -13567,7 +13596,7 @@
 	)
 	(wire
 		(pts
-			(xy 283.21 100.33) (xy 280.67 100.33)
+			(xy 285.75 100.33) (xy 280.67 100.33)
 		)
 		(stroke
 			(width 0)
@@ -21742,6 +21771,122 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:AO3407A")
+		(at 360.68 227.33 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "544df2ed-d21b-4f8e-b891-138048d1172d")
+		(property "Reference" "Q7"
+			(at 360.68 217.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3407A"
+			(at 360.68 219.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR"
+			(at 373.38 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/MOSFET_AOS_AO3407A_AO3407A_C15155.html"
+			(at 375.92 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "AO3407A"
+			(at 360.68 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "AOS"
+			(at 378.46 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AO3407A"
+			(at 381 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C15155"
+			(at 383.54 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "5052216e-3425-4d4b-ac8b-dd8492221c7e")
+		)
+		(pin "1"
+			(uuid "632d1d4a-1465-407e-bf66-15962e5bedba")
+		)
+		(pin "2"
+			(uuid "a3a684a2-295d-4658-b079-6d4134eef498")
+		)
+		(instances
+			(project "LSwarm Drone PCB"
+				(path "/f914089f-8107-4513-a595-68edd26170d4"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 410.21 76.2 0)
 		(unit 1)
@@ -29732,91 +29877,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:AO3401A")
-		(at 360.68 227.33 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bc85f946-9ceb-47b4-acd5-1f26f65946a9")
-		(property "Reference" "Q5"
-			(at 360.426 219.71 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AO3401A"
-			(at 360.68 221.996 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 362.585 222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-			(at 364.49 222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
-			(at 360.68 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "04938172-6e78-458a-a692-ceb7ca7167c2")
-		)
-		(pin "3"
-			(uuid "f56e27c7-5227-4b8b-8c28-f8009cb37cc4")
-		)
-		(pin "2"
-			(uuid "27e4ac0a-1b9d-4258-a081-4f9de8d3ddf5")
-		)
-		(instances
-			(project "LSwarm Drone PCB"
-				(path "/f914089f-8107-4513-a595-68edd26170d4"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 441.96 26.67 180)
 		(unit 1)
@@ -32051,7 +32111,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 283.21 110.49 0)
+		(at 289.56 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -32061,7 +32121,7 @@
 		(dnp no)
 		(uuid "df937e75-756b-4e33-93f0-e2f67f4835b9")
 		(property "Reference" "#PWR026"
-			(at 283.21 114.3 0)
+			(at 289.56 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32072,7 +32132,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 283.21 105.918 0)
+			(at 289.56 105.918 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32082,7 +32142,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 283.21 110.49 0)
+			(at 289.56 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32093,7 +32153,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 283.21 110.49 0)
+			(at 289.56 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32104,7 +32164,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 283.21 110.49 0)
+			(at 289.56 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
