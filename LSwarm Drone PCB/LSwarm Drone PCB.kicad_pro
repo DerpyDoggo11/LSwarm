@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 0.95,
-          "width": 0.8
+          "drill": 0.9,
+          "height": 0.9,
+          "width": 0.9
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -758,7 +758,7 @@
         "uuid": "f914089f-8107-4513-a595-68edd26170d4"
       }
     ],
-    "used_designators": "SW1,BUZZER2,LED1-5,Q5-7",
+    "used_designators": "SW1,#PWR44-46,#PWR51,BUZZER2,C69-70,C73,LED1-5,Q5-7,U1",
     "variants": []
   },
   "sheets": [
