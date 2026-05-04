@@ -113,7 +113,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -16176,7 +16175,7 @@
 				)
 			)
 		)
-		(property "Value" "L"
+		(property "Value" "24nH"
 			(at 0 1.55 0)
 			(layer "F.Fab")
 			(uuid "8fde48f3-0661-4127-be25-65c5ec506f17")

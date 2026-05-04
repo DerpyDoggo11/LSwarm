@@ -32432,7 +32432,7 @@
 				)
 			)
 		)
-		(property "Value" "L"
+		(property "Value" "24nH"
 			(at 48.26 261.62 90)
 			(show_name no)
 			(do_not_autoplace no)
