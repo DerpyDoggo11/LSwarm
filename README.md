@@ -1,6 +1,11 @@
 # LSwarm Mk.1
 Micro-drones for a light swarm
 
+![3D PCB](image-1.png)
+
+![PCB](image.png)
+
+![Schematic](image-2.png)
 ## Introduction
 As of recently, drones are becoming a greater and greater commodity around the world. They serve a multitude of purposes in areas like photography and entertainment, often adding to the capabilities of that field.
 
@@ -13,6 +18,7 @@ Although the LS Mk.1 is still **experimental** (haven't even written the code ye
 
 ### Are drone swarms safe and legal?
 Without a permit, flying more than one drone by yourself **outside** is **illegal** in most countries (especially the U.S.). However, in the U.S., flying **indoors** is technically not uncontrolled airspace and so FAA rules do not apply to it. Hence, in the U.S., **drone swarms** are completely **legal** as long as you **fly indoors** and **maintain safety precautions**. (Note: this is not legal advise, please check with your local government's rules and guidelines)
+
 
 ## Bill of Materials 
 
