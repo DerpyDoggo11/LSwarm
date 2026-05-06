@@ -1,5 +1,5 @@
 # LSwarm Mk.1
-Micro-drones for a light swarm
+Micro-drone swarm as a light display
 
 ![3D PCB](image-1.png)
 
