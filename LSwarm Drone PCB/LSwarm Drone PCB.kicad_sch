@@ -14810,54 +14810,6 @@
 			)
 		)
 	)
-	(global_label "RP2350_GPIO_17"
-		(shape input)
-		(at 196.85 214.63 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "095f2d95-717e-4ade-8dff-4b3c61e88709")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 216.0427 214.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "RP2350_GPIO_15"
-		(shape input)
-		(at 196.85 222.25 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0aaa3fd5-e361-4148-b938-9cc3f3790b94")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 216.0427 222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "RP2350_USB_DP"
 		(shape input)
 		(at 76.2 205.74 0)
@@ -14871,6 +14823,30 @@
 		(uuid "0bd903b7-55fc-4321-b195-30a0fa8320cc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 94.8484 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_3"
+		(shape input)
+		(at 196.85 222.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "12900922-222a-4994-b444-49aad3289f3e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.8332 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15218,6 +15194,30 @@
 			)
 		)
 	)
+	(global_label "RP2350_GPIO_2"
+		(shape input)
+		(at 196.85 219.71 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "399deeab-c1e0-4d0f-b955-c38fc16282d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.8332 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RP2350_GPIO_8"
 		(shape input)
 		(at 186.69 76.2 0)
@@ -15407,30 +15407,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "RP2350_GPIO_14"
-		(shape input)
-		(at 196.85 219.71 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "49bb54e9-64b8-4a78-85e2-ca591e5a452a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 216.0427 219.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -16154,6 +16130,30 @@
 			)
 		)
 	)
+	(global_label "RP2350_GPIO_0"
+		(shape input)
+		(at 196.85 214.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "94804f45-4279-4506-abd9-11faf0d414a6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.8332 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RP2350_GPIO_21"
 		(shape input)
 		(at 378.46 160.02 180)
@@ -16778,30 +16778,6 @@
 			)
 		)
 	)
-	(global_label "RP2350_GPIO_16"
-		(shape input)
-		(at 196.85 217.17 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "edd71509-51d8-4985-ba36-e7c6577a7411")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 216.0427 217.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "RP2350_QSPI_SD1"
 		(shape input)
 		(at 135.89 96.52 180)
@@ -16967,6 +16943,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_1"
+		(shape input)
+		(at 196.85 217.17 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fbbafd1a-7eda-46cd-8144-09d74e159a71")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.8332 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
