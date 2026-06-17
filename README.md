@@ -1,11 +1,11 @@
 # LSwarm Mk.1
 Micro-drone swarm as a light display
 
-![3D PCB](image-1.png)
+![3D PCB](model.png)
 
-![PCB](image.png)
+![PCB](wiring.png)
 
-![Schematic](image-2.png)
+![Schematic](schematic.png)
 
 ## Introduction
 As of recently, drones are becoming a greater and greater commodity around the world. They serve a multitude of purposes in areas like photography and entertainment, often adding to the capabilities of that field.
