@@ -9165,6 +9165,18 @@
 		)
 	)
 	(rectangle
+		(start 12.7 215.9)
+		(end 109.22 241.3)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "005653ee-cfb8-4097-9334-b689927a9ec5")
+	)
+	(rectangle
 		(start 218.44 60.96)
 		(end 294.64 91.44)
 		(stroke
@@ -9512,6 +9524,16 @@
 		)
 		(uuid "12d31a30-4c53-4477-9740-a6b09f222640")
 	)
+	(text "VBUS"
+		(exclude_from_sim no)
+		(at 208.534 117.094 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2526dd23-bd08-43cd-bc79-aada7f99763a")
+	)
 	(text "ESP32-C3 DEBUG"
 		(exclude_from_sim no)
 		(at 202.692 231.394 0)
@@ -9531,6 +9553,16 @@
 			)
 		)
 		(uuid "2920c705-6dcd-4b3f-a17b-4405909e2874")
+	)
+	(text "VBUS Divider"
+		(exclude_from_sim no)
+		(at 96.012 238.252 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "32202e9e-1d0c-4931-bc95-a928318632ec")
 	)
 	(text "BARO"
 		(exclude_from_sim no)
@@ -9634,7 +9666,7 @@
 	)
 	(text "STATUS LED"
 		(exclude_from_sim no)
-		(at 211.582 117.094 0)
+		(at 211.582 114.554 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9704,7 +9736,7 @@
 	)
 	(text "ESD Protection"
 		(exclude_from_sim no)
-		(at 90.678 213.106 0)
+		(at 93.726 213.106 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -10971,10 +11003,6 @@
 	(no_connect
 		(at 53.34 54.61)
 		(uuid "0a1174e9-cd5d-4819-b1bd-4bdd08651ba2")
-	)
-	(no_connect
-		(at 186.69 114.3)
-		(uuid "0c288483-86aa-4c49-a24b-3fb74f9eec44")
 	)
 	(no_connect
 		(at 152.4 231.14)
@@ -13572,6 +13600,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 219.71) (xy 69.85 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b15175fd-0cf7-4239-9c84-94b880f81fbd")
+	)
+	(wire
+		(pts
 			(xy 311.15 149.86) (xy 311.15 154.94)
 		)
 		(stroke
@@ -14372,6 +14410,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 219.71) (xy 62.23 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea2aa6b5-dceb-4509-9c82-158bc511ef74")
+	)
+	(wire
+		(pts
 			(xy 172.72 212.09) (xy 172.72 214.63)
 		)
 		(stroke
@@ -14786,9 +14834,9 @@
 			)
 		)
 	)
-	(global_label "RP2350_GPIO_24"
+	(global_label "RP2350_GPIO_23"
 		(shape input)
-		(at 186.69 116.84 0)
+		(at 186.69 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14798,7 +14846,7 @@
 		)
 		(uuid "07243e48-47f2-4dbe-b7e3-d3b1b37b1e49")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 205.8827 116.84 0)
+			(at 205.8827 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15026,6 +15074,30 @@
 			)
 		)
 	)
+	(global_label "RP2350_GPIO_24"
+		(shape input)
+		(at 186.69 116.84 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2174e98d-7761-47ed-a43c-dfdf63107199")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.8827 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RP2350_XOUT"
 		(shape input)
 		(at 135.89 119.38 180)
@@ -15119,6 +15191,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "USB_VBUS"
+		(shape input)
+		(at 52.07 219.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3237635f-9d98-4225-ac09-edfd946aa323")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.4086 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -15698,6 +15794,30 @@
 			)
 		)
 	)
+	(global_label "RP2350_GPIO_24"
+		(shape input)
+		(at 60.96 219.71 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "611cdda8-2e62-4481-8bef-da4367f755fa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.96 238.9027 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "BATT+"
 		(shape input)
 		(at 254 184.15 180)
@@ -16247,6 +16367,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "RP2350_GPIO_23"
+		(shape input)
+		(at 261.62 134.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c534e7d-0b41-4cbd-a986-6d0f105feeb0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.8127 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -16887,30 +17031,6 @@
 		(uuid "f5c32e33-d603-4758-a64b-9d8f23191f31")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 73.6214 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "RP2350_GPIO_24"
-		(shape input)
-		(at 261.62 134.62 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f68cb714-c1b4-4a07-8a61-317ab22976f2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 280.8127 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19980,6 +20100,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 55.88 219.71 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "36a5220c-49ef-478d-952a-d6a1fca32bf3")
+		(property "Reference" "R14"
+			(at 57.404 217.424 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 58.166 219.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 55.88 221.488 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 55.88 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "688b53e5-a452-4036-ba71-4e181ee52464")
+		)
+		(pin "1"
+			(uuid "14fa2eb7-8d58-489b-afa5-c81bb5ff70fc")
+		)
+		(instances
+			(project "LSwarm Drone PCB"
+				(path "/f914089f-8107-4513-a595-68edd26170d4"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x02_Socket")
 		(at 241.3 105.41 0)
 		(unit 1)
@@ -21490,6 +21691,87 @@
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
 					(reference "C62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.04 219.71 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4ae1076b-882d-4085-9d94-e0632f0bcf6b")
+		(property "Reference" "R15"
+			(at 67.564 217.424 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 68.326 219.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 66.04 221.488 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 66.04 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "bdd91efd-77f2-4453-a76f-aad8dafa7d4e")
+		)
+		(pin "1"
+			(uuid "ea255676-ccc9-45ff-bd04-462d86f78be9")
+		)
+		(instances
+			(project "LSwarm Drone PCB"
+				(path "/f914089f-8107-4513-a595-68edd26170d4"
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -31946,6 +32228,83 @@
 			(project "LSwarm Drone PCB"
 				(path "/f914089f-8107-4513-a595-68edd26170d4"
 					(reference "#PWR096")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 219.71 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e29001a2-dbab-4404-9177-5e512d85c9e8")
+		(property "Reference" "#PWR027"
+			(at 71.12 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 223.012 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc580b2b-1dde-4325-89af-463dc8abe72d")
+		)
+		(instances
+			(project "LSwarm Drone PCB"
+				(path "/f914089f-8107-4513-a595-68edd26170d4"
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)

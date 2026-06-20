@@ -60,7 +60,32 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_over_copper|51264927|79608076|077b2326-5e60-4949-bfcc-e98c8f2b8265|60836f20-7164-46a6-a08d-d774af278bc0",
+          ""
+        ],
+        [
+          "silk_overlap|47190000|79829191|077b2326-5e60-4949-bfcc-e98c8f2b8265|3ee6c8dd-3b61-406f-b7a2-54ebb00fcc63",
+          ""
+        ],
+        [
+          "silk_overlap|48110000|79751764|077b2326-5e60-4949-bfcc-e98c8f2b8265|88804ff5-ee07-404c-abbc-cf2f2881297a",
+          ""
+        ],
+        [
+          "silk_overlap|48390000|79728662|077b2326-5e60-4949-bfcc-e98c8f2b8265|1afec5d0-bc14-4226-aa2a-6e070ec38189",
+          ""
+        ],
+        [
+          "silk_overlap|52390000|79613489|077b2326-5e60-4949-bfcc-e98c8f2b8265|7fcb406d-1936-407e-8d4e-218b764a8f71",
+          ""
+        ],
+        [
+          "silk_overlap|53310000|79638520|077b2326-5e60-4949-bfcc-e98c8f2b8265|4061ad5f-9bab-41de-a0ab-b045eab2967a",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -776,7 +801,7 @@
         "uuid": "f914089f-8107-4513-a595-68edd26170d4"
       }
     ],
-    "used_designators": "STATUS1",
+    "used_designators": "STATUS1,R4-5,R14-15,#PWR27",
     "variants": []
   },
   "sheets": [
