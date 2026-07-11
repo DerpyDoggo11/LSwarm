@@ -15,10 +15,10 @@ Notably, one capability that many have a lack of access to are **3D (volumetric)
 The goal of the LSwarm Mark 1 is to provide a **cheap** alternative, approachable to everyone. Additionally, its all open sourced under the GNU GPL license! (do what you will with the code and designs but make sure to keep it open-source! :D)
 
 ### How will it localize without GPS?
-Although the LS Mk.1 is still **experimental** (haven't even written the code yet), using a powerful IMU and barometer, the drones should be able to localize their position **accurately within a few centimeters**. Although sensor drift is a concern, I believe it could be minimized with proper calibration and a good startup sequence.
+While most drone swarms use GPS to accurately localize their position, this drone uses an ultra-wide-band UWB module which communicates its distance to 4-5 UWB ground anchors. Although this means that you have to bare the upfront cost of these ground anchors, it allows for a full 3D mapping of the drone's location at a much lower price. The [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor) was specifically designed for this drone to minimize costs, you must have this or an equivalent UWB module (with wifi) to fly these drones as a swarm. In addition, the data from the IMU and barometer will be combined through a kalman filter to estimate the precise position and heading of the drone.  
 
 ### Are drone swarms safe and legal?
-Without a permit, flying more than one drone by yourself **outside** is **illegal** without a permit in most countries (especially the U.S.). However, in the U.S., flying **indoors** is technically not uncontrolled airspace and so FAA rules do not apply to it. Hence, in the U.S., **drone swarms** are completely **legal** as long as you **fly indoors** and **maintain safety precautions**. (Note: this is not legal advise, please check with your local government's rules and guidelines)
+Without a permit, flying more than one drone by yourself **outside** is **illegal** without a permit in most countries (especially the U.S.). However, in the U.S., flying **indoors** is technically not uncontrolled airspace and so FAA rules do not apply to it. This means that these **drone swarms** are completely **legal** as long as you **fly indoors** (or under large netting) and **maintain safety precautions**. This isnt legal advise though so make sure to check with your local government's rules and guidelines before committing to this design. 
 
 
 ## Bill of Materials 
@@ -61,6 +61,7 @@ Cost per drone: **$25.40**
 
 ## Tools / Other parts:
 - Raspberry PI Zero 2 W or equivalent (or just a computer/laptop)
+- UWB Anchors ([LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor) or equivalent UWB module (must have wifi)) 
 - Hot-air reflow station or SMD hot plate
 - Solder paste for SMD components
 - Tweezers for SMD components
