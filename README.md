@@ -8,7 +8,7 @@ Micro-drone swarm as a light display
 ![Schematic](schematic.png)
 
 ## Introduction
-The LSwarm Mk.1 is a cheap open-source microdrone platform for making drone swarms. Instead of GPS, it uses UWB frequencies to communicate with ground anchors (see [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor)) to retrieve each drones' position. To fabricate these drones yourself, see the bill of materials below and follow the instructions. 
+The LSwarm Mk.1 is a cheap open-source microdrone platform for making drone swarms. Instead of GPS, it uses UWB frequencies to communicate with ground anchors (see [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor)) for positioning. To fabricate these drones yourself, see the bill of materials below and follow the instructions. 
 
 Also, its all open sourced under the GNU GPL license! (do what you will with the code and designs but make sure to keep it open-source! :D)
 
