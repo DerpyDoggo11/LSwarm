@@ -8,18 +8,16 @@ Micro-drone swarm as a light display
 ![Schematic](schematic.png)
 
 ## Introduction
-As of recently, drones are becoming a greater and greater commodity around the world. They serve a multitude of purposes in areas like photography and entertainment, often adding to the capabilities of that field.
+The LSwarm Mk.1 is a cheap open-source microdrone platform for making drone swarms. Instead of GPS, it uses UWB frequencies to communicate with ground anchors (see [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor)) to retrieve each drones' position. To fabricate these drones yourself, see the bill of materials below and follow the instructions. 
 
-Notably, one capability that many have a lack of access to are **3D (volumetric) displays**, often made from drones with expensive GPS systems and control systems. A swarm of these drones could cost **thousands of dollars** for even a basic display. 
+Also, its all open sourced under the GNU GPL license! (do what you will with the code and designs but make sure to keep it open-source! :D)
 
-The goal of the LSwarm Mark 1 is to provide a **cheap** alternative, approachable to everyone. Additionally, its all open sourced under the GNU GPL license! (do what you will with the code and designs but make sure to keep it open-source! :D)
+### Are drone swarms legal in the US?
+TLDR: yes and no, mostly no but sometimes yes. 
 
-### How will it localize without GPS?
-While most drone swarms use GPS to accurately localize their position, this drone uses an ultra-wide-band UWB module which communicates its distance to 4-5 UWB ground anchors. Although this means that you have to bare the upfront cost of these ground anchors, it allows for a full 3D mapping of the drone's location at a much lower price. The [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor) was specifically designed for this drone to minimize costs, you must have this or an equivalent UWB module (with wifi) to fly these drones as a swarm. In addition, the data from the IMU and barometer will be combined through a kalman filter to estimate the precise position and heading of the drone.  
+In the US, flying more than one drone by yourself outside is technically not legal without a permit, but flying indoors (or under some netting outside) is perfectly allowed, so make sure you understand this before buying or assembling any components.
 
-### Are drone swarms safe and legal?
-Without a permit, flying more than one drone by yourself **outside** is **illegal** without a permit in most countries (especially the U.S.). However, in the U.S., flying **indoors** is technically not uncontrolled airspace and so FAA rules do not apply to it. This means that these **drone swarms** are completely **legal** as long as you **fly indoors** (or under large netting) and **maintain safety precautions**. This isnt legal advise though so make sure to check with your local government's rules and guidelines before committing to this design. 
-
+If you live outside of the US, the restrictions will be different so make sure you check with your local government. 
 
 ## Bill of Materials 
 
