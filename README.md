@@ -17,7 +17,7 @@ TLDR: yes and no, mostly no but sometimes yes.
 
 In the US, flying more than one drone by yourself outside is technically not legal without a permit, but flying indoors (or under some netting outside) is perfectly allowed, so make sure you understand this before buying or assembling any components.
 
-If you live outside of the US, the restrictions will be different so make sure you check with your local government. 
+If you live outside of the US, your restrictions will be different so make sure to check with your local government. 
 
 ## Bill of Materials 
 
