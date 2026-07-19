@@ -1,11 +1,16 @@
 # LSwarm Mk.1
 Micro-drone swarm as a light display
 
+## 3D Preview
 ![3D PCB](model.png)
 
+## Wiring
 ![PCB](wiring.png)
 
+## Schematic
 ![Schematic](schematic.png)
+
+### Download ./latestProduction to begin fabricating the PCB
 
 ## Introduction
 The LSwarm Mk.1 is a cheap open-source microdrone platform for making drone swarms. Instead of GPS, it uses UWB frequencies to communicate with ground anchors (see [LS Anchor](https://github.com/DerpyDoggo11/LSwarm-Anchor)) for positioning. To fabricate these drones yourself, see the bill of materials below and follow the instructions. 
