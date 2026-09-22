@@ -1,6 +1,7 @@
-#include "esp_link.h"
+#include "esplink.h"
 #include "motors.h"
 #include "hmi.h"
+#include <cstring>
 
 namespace EspLink {
 
@@ -8,7 +9,13 @@ namespace EspLink {
 void begin() {
     pinMode(PIN_ESP_EN, OUTPUT);
     pinMode(PIN_ESP_BOOT, OUTPUT);
+#if defined(EXTERNAL_ESP)
+    // On-board ESP32-C3 is unused; an external ESP32-S3 drives the header UART.
+    // Hold the C3 in reset so it can't contend on the shared TX/RX lines.
+    digitalWrite(PIN_ESP_EN, LOW);
+#else
     digitalWrite(PIN_ESP_EN, HIGH);
+#endif
     digitalWrite(PIN_ESP_BOOT, HIGH);
 
     Serial1.setTX(PIN_ESP_TX);
@@ -42,32 +49,20 @@ void hold() {
     Motors::disarm();
     Hmi::status(0, 0, 60);
 
-    uinst32_t baud = LINK_BAUD;
-    Serial1.begin(baud);
+    // SerialUSB (native USB CDC) exposes no host-baud getter, so the UART to the
+    // ESP32 runs at a fixed rate. Flash with:  esptool --before default_reset --baud 115200
+    Serial1.begin(LINK_BAUD);
 
     bool lastDtr = false, lastRts = false;
 
     for (;;) {
-        uint32_t hostBaud = Serial.baud();
-        if (hostBaud >= 1200 && hostBaud != baud) {
-            baud = hostBaud;
-            Serial1.flush();
-            Serial1.end();
-            Serial1.setTX(PIN_ESP_TX);
-            Serial1.setRX(Pin_ESP_RX);
-            Serial1.begin(baud);
-        }
-
+        // Direct-drive auto-reset: DTR -> BOOT(IO0), RTS -> EN(reset), both active-low.
+        // (No auto-reset transistors on this board, so map straight through.)
         bool dtr = Serial.dtr();
         bool rts = Serial.rts();
         if (dtr != lastDtr || rts != lastRts) {
-            if (dtr = rts) {
-                digitalWrite(PIN_ESP_EN, HIGH);
-                digitalWrite(PIN_ESP_BOOT, HIGH);
-            } else if (rts) {
-                digitalWrite(PIN_ESP_EN, HIGH);
-                diitalWrite(PIN_ESP_BOOT, LOW);
-            }
+            digitalWrite(PIN_ESP_BOOT, dtr ? LOW : HIGH);
+            digitalWrite(PIN_ESP_EN,   rts ? LOW : HIGH);
             lastDtr = dtr;
             lastRts = rts;
         }
@@ -77,7 +72,6 @@ void hold() {
         while (Serial1.available() && Serial.availableForWrite())
             Serial.write((uint8_t)Serial1.read());
     }
-
 }
 
 void pollForBridgeRequest() {
@@ -88,7 +82,7 @@ void pollForBridgeRequest() {
         if (c == '\n' || c == '\r') {
             buf[n] = 0;
             if (strcmp(buf, "esp_bridge") == 0) {
-                Serial.println("RP2350 entering ESP32 programming mode")
+                Serial.println("RP2350 entering ESP32 programming mode");
                 Serial.flush();
                 delay(50);
                 passthrough();

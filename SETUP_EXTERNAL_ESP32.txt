@@ -1,0 +1,242 @@
+===========================================================================
+ LSwarm - Wiring an external ESP32-S3 Super Mini to the drone and the anchor
+===========================================================================
+
+WHY: The on-board ESP32-C3 chips (drone U8, anchor U6) don't work. This guide
+bypasses them with an external ESP32-S3 Super Mini on each board, and adds the
+Raspberry Pi Zero 2 W ground station.
+
+Read the "IMPORTANT REALITY CHECK" section first - it changes what you buy.
+
+
+---------------------------------------------------------------------------
+ IMPORTANT REALITY CHECK (read this)
+---------------------------------------------------------------------------
+1. The ANCHOR has a UWB radio on the PCB (module U2, "BU03" / DW3000 by the
+   antenna). External S3 drives it -> responder.
+
+2. The DRONE has a UWB tag on the PCB too. Its DW3000 nets route to the dead
+   ESP32-C3 pads (WAKEUP=C3 IO1, IRQ=IO3, MISO=IO4, MOSI=IO5, CLK=IO6, CS=IO7,
+   RST=IO10). The external S3 taps those pads and drives the tag -> the drone
+   ranges the anchors and gets a real position. Wiring in section D2.
+   Build the drone ESP firmware with USE_UWB=1 (default).
+
+3. WiFi + ESP-NOW share one radio. Both must sit on the Pi AP's channel. The
+   firmware forces this (esp_wifi_set_channel to WiFi.channel()). Don't fight
+   it - just let all drones join the Pi AP.
+
+
+---------------------------------------------------------------------------
+ PARTS
+---------------------------------------------------------------------------
+- 1x ESP32-S3 Super Mini per drone
+- 1x ESP32-S3 Super Mini per anchor
+  (UWB radios are already on both PCBs - no extra UWB modules to buy)
+- Raspberry Pi Zero 2 W + SD card
+- Thin silicone wire (30 AWG), soldering iron
+
+
+===========================================================================
+ A) ESP32-S3 SUPER MINI PIN USAGE (both boards, one BOM)
+===========================================================================
+Avoid these S3 pins: 0,3,45,46 (strapping), 19,20 (USB D-/D+),
+43,44 (USB-serial TX/RX), 48 (on-board RGB LED - firmware uses it for status).
+
+Function            S3 GPIO
+------------------  -------
+UART link RX          4     (drone only)
+UART link TX          5     (drone only)
+DW3000 MOSI          11
+DW3000 SCK           12
+DW3000 MISO          13
+DW3000 CS            10
+DW3000 IRQ            9
+DW3000 RST            8
+DW3000 WAKEUP         7
+Anchor VMON (ADC)     1     (anchor only)
+Status LED           48     (on-board RGB, no wire)
+
+
+===========================================================================
+ D) DRONE WIRING
+===========================================================================
+
+D1) RP2350 <-> S3 link  (the 6-pin "ESP32" header on the drone PCB)
+    The header is silkscreened:  GND  3V3  BOOT  EN  TX  RX
+
+    Header pin   ->  ESP32-S3 Super Mini
+    ----------       -------------------
+    GND          ->  GND
+    3V3          ->  3V3        (see power note below)
+    TX           ->  GPIO4  (S3 RX)    <-- cross-over: board TX to S3 RX
+    RX           ->  GPIO5  (S3 TX)    <-- cross-over: board RX to S3 TX
+    BOOT         ->  (leave open)
+    EN           ->  (leave open)
+
+    - Cross the TX/RX. Header TX is the RP2350's output (GPIO0); it must land
+      on the S3's RX. Header RX is the RP2350's input (GPIO1); it takes the
+      S3's TX.
+    - BOOT/EN were only used to auto-flash the dead C3. You flash the S3 over
+      its own USB-C now, so leave them open. The RP2350 firmware (built with
+      -DEXTERNAL_ESP) also holds the C3 in reset so it can't jam the bus.
+    - POWER: the header 3V3 comes from the drone's AP2112K-3.3 (600 mA). WiFi
+      TX peaks can brown that out. Safer: power the S3 from its own USB during
+      bench work, or run a wire from the board's 5V (boost output) to the S3
+      "5V" pin and leave header 3V3 disconnected. Always tie GND either way.
+
+D2) DRONE UWB TAG  (on-board DW3000 - tap at the dead C3 pads)
+    The tag's DW nets land on the C3-MINI (U8) pads. Tap each and run to the S3
+    SPI pins. Find the pad by the C3 GPIO it used:
+
+      DW net    C3 pad (U8)   ->  ESP32-S3 GPIO
+      -------   -----------       -------------
+      MOSI      IO5           ->  11
+      CLK/SCK   IO6           ->  12
+      MISO      IO4           ->  13
+      CS        IO7           ->  10
+      IRQ       IO3           ->   9
+      RST       IO10          ->   8
+      WAKEUP    IO1           ->   7
+
+    - Lift or disable the C3 (U8) so it can't fight the SPI (the RP2350 already
+      holds it in reset via -DEXTERNAL_ESP, but a powered C3 can still drive
+      IO pins - safest to not populate it or cut its EN).
+    - Power the DW rail from the board 3.3 V; share GND with the S3.
+
+
+===========================================================================
+ E) ANCHOR WIRING
+===========================================================================
+The anchor's DW3000 (U2) is already on the PCB; its SPI nets used to run to
+the dead C3 (U6). Tap those nets and run them to the external S3. Easiest tap
+points are the C3-MINI pads (U6) or the U2 module pins. Net names are on the
+anchor schematic (right-hand "UWB ANCHOR" block).
+
+    DW3000 net (schematic)   ->  ESP32-S3 GPIO
+    ----------------------       -------------
+    DW_MOSI                  ->  11
+    DW_CLK  (SCK)            ->  12
+    DW_MISO                  ->  13
+    DW_Sn   (CS)             ->  10
+    DW_IRQ                   ->   9
+    DW_RST                  ->    8
+    DW_WAKEUP               ->    7
+    UW_3.3V  (module 3V3)   ->   S3 3V3
+    GND                     ->   S3 GND
+    ESP32_VMON_ADC (test pt)->   S3 GPIO1   (optional battery monitor)
+
+    - Do NOT populate / leave dead the C3 (U6). If it's already soldered, lift
+      it or cut its EN so it can't drive the SPI lines against the S3.
+    - Power the S3 from the anchor's 3.3 V rail (UW_3.3V / board 3V3) and share
+      GND. The anchor LDO (AP2112K) can feed the S3.
+
+
+===========================================================================
+ F) FIRMWARE - what changed and how to build
+===========================================================================
+All three firmwares are in the repos. PlatformIO (VS Code) recommended.
+
+F1) Drone RP2350   (LSwarm/RP2350 Firmware)
+    - Build/flash the "drone" env (now built with -DEXTERNAL_ESP). Flash over
+      the RP2350 USB-C as before.
+    - New behaviour: sends "T,vbat,armed,usb" telemetry to the S3 every 200 ms,
+      accepts "P,x,y,z,q" position and "C,verb,args" commands from the S3
+      (Pi commands are forwarded through). Console commands are unchanged.
+
+F2) Drone ESP32-S3   (LSwarm/ESP32 Firmware)
+    - EDIT the config block at the top of src/main.cpp:
+        DRONE_ID, WIFI_SSID, WIFI_PASS, PI_IP, ANCHORS[] list.
+    - env "drone_s3". Flash over the S3 USB-C.
+    - Keep -DUSE_UWB=1 (default): the drone has an on-board UWB tag (D2).
+    - Uses the Makerfabs DW3000 Arduino library (pulled by lib_deps).
+
+F3) Anchor ESP32-S3   (LSwarm Anchor/ESP32 Firmware)
+    - EDIT the config block in src/main.cpp: ANCHOR_ID (unique per anchor!),
+      WIFI_SSID, WIFI_PASS, PI_IP.
+    - env "anchor_s3". Flash over the S3 USB-C.
+
+F4) CALIBRATION (the one physical knob)
+    Both uwb.h files have ANTENNA_DELAY = 16385. Put a tag ~5.00 m from an
+    anchor, read the ranges the drone reports, and nudge ANTENNA_DELAY until
+    the number matches the tape measure. Same value on tag and anchors.
+
+
+===========================================================================
+ G) RASPBERRY PI ZERO 2 W GROUND STATION
+===========================================================================
+Files: LSwarm/Pi Ground Station/ (ground_station.py, anchors.json)
+
+G1) Make the Pi a WiFi access point named "LSwarm" (must match the firmware
+    WIFI_SSID/WIFI_PASS). On Raspberry Pi OS Bookworm (NetworkManager):
+
+      sudo nmcli device wifi hotspot ssid LSwarm password swarmnet ifname wlan0
+      sudo nmcli connection modify Hotspot ipv4.addresses 192.168.4.1/24
+      sudo nmcli connection modify Hotspot connection.autoconnect yes
+      sudo nmcli connection up Hotspot
+
+    The AP is now 192.168.4.1 - that's the PI_IP in the firmware. Drones and
+    anchors will DHCP onto 192.168.4.x.
+
+G2) Run the ground station (also serves the web apps):
+      sudo apt install python3-numpy
+      cd "Pi Ground Station"
+      python3 ground_station.py --demo   # sanity-check the math (optional)
+      python3 ground_station.py          # UDP solver + web dashboard
+
+    One process does it all: UDP solving on :9000, web UI on :8080.
+
+G3) SET UP ANCHORS ON THE MAP (no more hand-edited coordinates):
+    From any device on the LSwarm AP open:
+      http://192.168.4.1:8080/setup
+    - The map is live satellite imagery (Esri). Pan to your site.
+    - Click to drop each anchor; drag to fine-tune; set its z (height) and give
+      each anchor the SAME number as its firmware ANCHOR_ID.
+    - Click "Set origin = map center" (this is local (0,0)), then "Save".
+    - Saving writes config.json on the Pi. Imagery tiles you viewed are cached
+      to Pi disk (tiles/), so the field works offline afterwards. Leaflet.js/css
+      are already vendored locally - the web apps need NO internet at run time.
+
+G4) LIVE DASHBOARD (auto-loads whatever setup saved):
+      http://192.168.4.1:8080/
+    - Anchors (yellow) and drones (blue/green) plotted on the same imagery,
+      with trails. Coordinates shown both as local x/y/z metres and as lat/lon.
+    - Tables: per-drone x,y,z,fix-quality,vbat,armed,uwb,age and per-anchor
+      uwb/vbat/age. "link" dot is green while the SSE stream is live.
+    - No upload step: the dashboard reads /config + /events from the same Pi,
+      so a Save in /setup shows up here on the next refresh.
+
+G5) TRY IT WITH NO HARDWARE (simulator):
+      python3 ground_station.py        # terminal 1
+      python3 sim.py 3                 # terminal 2 -> 3 virtual drones
+    Open the dashboard and watch 3 drones circle the anchors. Confirms the
+    whole pipe (ranges -> trilateration -> map) before you trust real radios.
+
+G6) (optional) autostart: systemd service running `python3 ground_station.py`.
+
+
+===========================================================================
+ H) DATA FLOW SUMMARY
+===========================================================================
+  DW3000 tag (drone) --UWB TWR--> anchors                 -> ranges
+  drone S3 --UDP "R,id,aid,dist,..."--> Pi                -> Pi trilaterates
+  Pi --UDP "P,x,y,z,q"--> drone S3 --UART "P,..."--> RP2350
+  drone S3 --ESP-NOW "N,id,x,y,z"--> peer drones          (formation spacing)
+  RP2350 --UART "T,vbat,armed,usb"--> drone S3 --UDP "D,..."--> Pi
+  anchor S3 --UDP "A,id,uwbok,vbat"--> Pi                 (health)
+  Pi --UDP "C,verb,args"--> drone S3 --UART "C,..."--> RP2350   (choreography)
+
+
+===========================================================================
+ I) BRING-UP CHECKLIST
+===========================================================================
+[ ] Pi AP "LSwarm" up at 192.168.4.1
+[ ] ground station running; dashboard opens at http://192.168.4.1:8080/
+[ ] anchors placed + saved in /setup (numbers match firmware ANCHOR_IDs)
+[ ] sim.py fleet shows drones moving on the map (pipe proven end-to-end)
+[ ] each anchor: unique ANCHOR_ID, flashed, shows green LED, "A," seen on Pi
+[ ] each drone RP2350: reflashed with EXTERNAL_ESP
+[ ] each drone S3: config edited, flashed, "wifi ok" + "UWB ready" on console
+[ ] drone reports "R," ranges to Pi; Pi replies "P,"; RP2350 sees position
+[ ] ANTENNA_DELAY tuned against a tape measure
+[ ] ESP-NOW: two drones see each other's "N," lines
+===========================================================================

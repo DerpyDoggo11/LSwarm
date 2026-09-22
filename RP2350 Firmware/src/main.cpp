@@ -3,7 +3,8 @@
 #include "sensors.h"
 #include "motors.h"
 #include "hmi.h"
-#include "esp_link.h"
+#include "esplink.h"
+#include "selftest.h"
 
 #if defined(ESP_PASSTHROUGH_ONLY)
 
@@ -24,6 +25,22 @@ static volatile float g_vbat = 0.0f;
 static volatile bool g_sensorsOk = false;
 
 static volatile uint16_t g_throttle[4] = {0, 0, 0, 0};
+
+// Last position solution pushed up from the ESP32-S3 ("P,x,y,z,q").
+static volatile float g_px = 0, g_py = 0, g_pz = 0; static volatile int g_pq = 0;
+
+// Bench motor test: -1 = normal flight-control path, 0..3 = drive that one motor
+// at g_motorTestPwm and hold the others off. Applied on core1 so all PWM writes
+// stay on a single core (no cross-core race with analogWrite).
+static volatile int8_t   g_motorTest    = -1;
+static volatile uint16_t g_motorTestPwm = 0;
+
+// When true, the periodic status-LED state machine is suspended so a manual
+// 'status <r> <g> <b>' (or the self-test result colour) stays on screen.
+static volatile bool     g_statusOverride = false;
+
+static constexpr uint16_t MTEST_PWM = 220;   // ~22% - enough to spin a prop-less motor
+static constexpr uint32_t MTEST_MS  = 700;   // per-motor spin duration
 
 void setup() {
   Serial.begin(115200);
@@ -54,7 +71,9 @@ void setup() {
 
 static void handleCommand(const char* cmd) {
   if (!strcmp(cmd, "help")) {
-        Serial.println("arm | disarm | t <0-3> <0-1000> | stat | " "esp_reset | esp_boot | esp_bridge");
+        Serial.println("arm | disarm | t <0-3> <0-1000> | stat");
+        Serial.println("selftest | mtest | m <0-3> <0-1000> | beep | status [<r> <g> <b>] | led <r> <g> <b>");
+        Serial.println("esp_reset | esp_boot | esp_bridge");
   } else if (!strcmp(cmd, "arm")) {
       if (!g_sensorsOk) { Serial.println("refused: sensors failed"); return; }
       if (g_vbat < Power::VBAT_CRITICAL && !Power::usbPresent()) {
@@ -65,8 +84,55 @@ static void handleCommand(const char* cmd) {
       Serial.println("ARMED");
   } else if (!strcmp(cmd, "disarm")) {
       g_armed = false;
+      g_motorTest = -1;
       for (uint8_t i = 0; i < 4; i++) g_throttle[i] = 0;
       Serial.println("disarmed");
+  } else if (!strcmp(cmd, "selftest")) {
+      bool ok = SelfTest::run();
+      g_statusOverride = true;                 // hold the result colour
+      Hmi::status(ok ? 0 : 60, ok ? 60 : 0, 0);
+      Serial.println("(status LED held; type 'status' to resume automatic)");
+  } else if (!strcmp(cmd, "mtest")) {
+      Serial.println("MOTOR TEST: remove propellers! spinning each motor ~0.7s in order...");
+      for (uint8_t i = 0; i < 4; i++) {
+          Serial.printf("  motor %u\n", i);
+          g_motorTestPwm = MTEST_PWM;
+          g_motorTest = (int8_t)i;
+          delay(MTEST_MS);
+          g_motorTest = -1;                    // core1 zeroes all outputs
+          delay(400);
+      }
+      Serial.println("motor test complete");
+  } else if (!strncmp(cmd, "m ", 2)) {
+      int idx, val;
+      if (sscanf(cmd + 2, "%d %d", &idx, &val) == 2 && idx >= 0 && idx < 4) {
+          g_motorTestPwm = (uint16_t)constrain(val, 0, Motors::PWM_MAX);
+          g_motorTest = (g_motorTestPwm == 0) ? -1 : (int8_t)idx;
+          Serial.printf("bench motor %d = %d (props off!)\n", idx, g_motorTestPwm);
+      } else {
+          Serial.println("usage: m <0-3> <0-1000>");
+      }
+  } else if (!strcmp(cmd, "beep")) {
+      Hmi::beep(120);
+      Serial.println("beep");
+  } else if (!strncmp(cmd, "status", 6)) {
+      int r, g, b;
+      if (sscanf(cmd + 6, "%d %d %d", &r, &g, &b) == 3) {
+          g_statusOverride = true;
+          Hmi::status(r, g, b);
+          Serial.printf("status %d %d %d (override; 'status' alone resumes auto)\n", r, g, b);
+      } else {
+          g_statusOverride = false;
+          Serial.println("status: automatic");
+      }
+  } else if (!strncmp(cmd, "led", 3)) {
+      int r, g, b;
+      if (sscanf(cmd + 3, "%d %d %d", &r, &g, &b) == 3) {
+          Hmi::array(r, g, b);
+          Serial.printf("led %d %d %d\n", r, g, b);
+      } else {
+          Serial.println("usage: led <r> <g> <b>");
+      }
   } else if (!strncmp(cmd, "t ", 2)) {
       int idx, val;
       if (sscanf(cmd + 2, "%d %d", &idx, &val) == 2 && idx >= 0 && idx < 4) {
@@ -92,23 +158,52 @@ static void handleCommand(const char* cmd) {
   }
 }
 
+// Lines coming up from the ESP32-S3 over Serial1.
+//   S,<text>       -> log to USB console
+//   P,x,y,z,q      -> position solution (store for flight/telemetry)
+//   N,id,x,y,z     -> neighbour position (ESP-NOW relay)  [ignored for now]
+//   C,<cmd>...     -> command from the Pi, mapped onto the local console verbs
+static void handleEspLine(char* s) {
+  if (s[0] == 'P') {
+    float x, y, z; int q;
+    if (sscanf(s + 2, "%f,%f,%f,%d", &x, &y, &z, &q) == 4) {
+      g_px = x; g_py = y; g_pz = z; g_pq = q;
+    }
+  } else if (s[0] == 'C') {
+    // Translate "C,verb,a,b,c" into the existing console command "verb a b c".
+    char cmd[48]; size_t j = 0;
+    for (char* p = s + 2; *p && j < sizeof(cmd) - 1; p++)
+      cmd[j++] = (*p == ',') ? ' ' : *p;
+    cmd[j] = 0;
+    handleCommand(cmd);
+  } else {
+    Serial.println(s);            // S,... and anything else -> console
+  }
+}
+
 void loop() {
   static char line[48];
   static uint8_t n = 0;
   while (Serial.available()) {
     char c = (char)Serial.read();
     if (c == '\n' || c == '\r') {
-        if (n) { 
-          line[n] = 0; handleCommand(line); n = 0; 
+        if (n) {
+          line[n] = 0; handleCommand(line); n = 0;
         }
       } else if (n < sizeof(line) - 1) {
         line[n++] = c;
       }
   }
 
+  static char eline[96];
+  static uint8_t en = 0;
   while (Serial1.available()) {
       char c = (char)Serial1.read();
-      Serial.write(c);
+      if (c == '\n' || c == '\r') {
+          if (en) { eline[en] = 0; handleEspLine(eline); en = 0; }
+      } else if (en < sizeof(eline) - 1) {
+          eline[en++] = c;
+      }
   }
 
   static uint32_t tLast = 0;
@@ -116,11 +211,16 @@ void loop() {
     tLast = millis();
     g_vbat = Power::batteryVolts();
 
-    if (!g_sensorsOk) Hmi::status(60, 0, 0);
-    else if (g_vbat < Power::VBAT_CRITICAL) Hmi::status(60, 0, 0);
-    else if (g_vbat < Power::VBAT_WARN) Hmi::status(60, 30, 0);
-    else if (g_armed) Hmi::status(0, 60, 0);
-    else Hmi::status(0, 0, 30);
+    // Push telemetry up to the ESP32-S3 -> Pi ("T,vbat,armed,usb").
+    Serial1.printf("T,%.2f,%d,%d\n", g_vbat, g_armed ? 1 : 0, Power::usbPresent() ? 1 : 0);
+
+    if (!g_statusOverride) {
+        if (!g_sensorsOk) Hmi::status(60, 0, 0);
+        else if (g_vbat < Power::VBAT_CRITICAL) Hmi::status(60, 0, 0);
+        else if (g_vbat < Power::VBAT_WARN) Hmi::status(60, 30, 0);
+        else if (g_armed) Hmi::status(0, 60, 0);
+        else Hmi::status(0, 0, 30);
+    }
 
     if (g_armed && g_vbat < Power::VBAT_CRITICAL && !Power::usbPresent()) {
         g_armed = false;
@@ -140,6 +240,13 @@ void loop1() {
   if ((int32_t)(now - next) < 0) return;
 
   next = now + 1000; // 1 kHz
+
+  // Bench motor test overrides the flight-control path ('mtest' / 'm' commands).
+  if (g_motorTest >= 0) {
+      for (uint8_t i = 0; i < 4; i++)
+          Motors::set(i, (i == g_motorTest) ? g_motorTestPwm : 0);
+      return;
+  }
 
   ImuSample imu;
   if (!Sensors::readImu(imu)) { Motors::disarm(); return; }

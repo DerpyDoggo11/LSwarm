@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSwarm Setup</title>
+<link rel="stylesheet" href="/leaflet.css">
+<script src="/leaflet.js"></script>
+<style>
+  :root { --bg:#0f1216; --panel:#171c22; --line:#2a323c; --fg:#e6edf3; --accent:#4aa3ff; --ok:#3fb950; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.4 system-ui,sans-serif; color:var(--fg); background:var(--bg); display:flex; height:100vh; }
+  #map { flex:1; }
+  #side { width:340px; background:var(--panel); border-left:1px solid var(--line); display:flex; flex-direction:column; }
+  header { padding:12px 14px; border-bottom:1px solid var(--line); }
+  header h1 { margin:0; font-size:16px; } header p { margin:6px 0 0; color:#9aa7b4; font-size:12px; }
+  .rows { flex:1; overflow:auto; padding:8px 10px; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; padding:4px; border-bottom:1px solid var(--line); font-size:12px; }
+  input[type=number] { width:64px; background:#0e1319; color:var(--fg); border:1px solid var(--line); border-radius:4px; padding:3px; }
+  .btn { background:var(--accent); color:#04121f; border:0; border-radius:6px; padding:9px; font-weight:600; cursor:pointer; width:100%; }
+  .btn.ghost { background:#222b34; color:var(--fg); }
+  .foot { padding:10px; border-top:1px solid var(--line); display:grid; gap:8px; }
+  .x { color:#ff6b6b; cursor:pointer; }
+  #origin { font-size:12px; color:#9aa7b4; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="side">
+  <header>
+    <h1>Anchor setup</h1>
+    <p>Click the satellite map to drop an anchor. Drag markers to fine-tune. Set an origin, then Save. <a href="/">live view →</a></p>
+  </header>
+  <div class="rows">
+    <table><thead><tr><th>#</th><th>lat</th><th>lon</th><th>z (m)</th><th></th></tr></thead>
+    <tbody id="tbody"></tbody></table>
+  </div>
+  <div class="foot">
+    <div id="origin">origin: (unset — click "Set origin")</div>
+    <button class="btn ghost" id="setOrigin">Set origin = map center</button>
+    <button class="btn" id="save">Save to ground station</button>
+  </div>
+</div>
+<script>
+const map = L.map('map').setView([37.7749, -122.4194], 18);
+L.tileLayer('/tiles/{z}/{x}/{y}', { maxZoom: 21, attribution: 'Esri World Imagery (cached)' }).addTo(map);
+
+let anchors = {};      // id -> {lat, lon, z, marker}
+let nextId = 1;
+let origin = null;     // {origin_lat, origin_lon}
+
+function icon(id){ return L.divIcon({ className:'', html:
+  `<div style="width:22px;height:22px;border-radius:50%;background:#ffcc33;border:2px solid #111;
+   display:flex;align-items:center;justify-content:center;font:700 12px sans-serif;color:#111">${id}</div>`,
+   iconSize:[22,22], iconAnchor:[11,11] }); }
+
+function addAnchor(id, lat, lon, z){
+  const m = L.marker([lat, lon], { icon: icon(id), draggable:true }).addTo(map);
+  anchors[id] = { lat, lon, z: z||0, marker: m };
+  m.on('drag', e => { const p=e.target.getLatLng(); anchors[id].lat=p.lat; anchors[id].lon=p.lng; render(); });
+  m.on('dragend', render);
+  render();
+}
+
+function render(){
+  const tb = document.getElementById('tbody'); tb.innerHTML='';
+  Object.keys(anchors).sort((a,b)=>a-b).forEach(id=>{
+    const a = anchors[id];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${id}</td><td>${a.lat.toFixed(6)}</td><td>${a.lon.toFixed(6)}</td>`+
+      `<td><input type="number" step="0.1" value="${a.z}"></td><td class="x">✕</td>`;
+    tr.querySelector('input').oninput = e => a.z = parseFloat(e.target.value)||0;
+    tr.querySelector('.x').onclick = () => { map.removeLayer(a.marker); delete anchors[id]; render(); };
+    tb.appendChild(tr);
+  });
+  document.getElementById('origin').textContent = origin
+    ? `origin: ${origin.origin_lat.toFixed(6)}, ${origin.origin_lon.toFixed(6)}`
+    : 'origin: (unset — click "Set origin")';
+}
+
+map.on('click', e => addAnchor(nextId++, e.latlng.lat, e.latlng.lng, 0));
+
+document.getElementById('setOrigin').onclick = () => {
+  const c = map.getCenter(); origin = { origin_lat:c.lat, origin_lon:c.lng }; render();
+};
+
+document.getElementById('save').onclick = async () => {
+  if (!origin) { const c=map.getCenter(); origin={origin_lat:c.lat,origin_lon:c.lng}; }
+  const out = { geo: origin, anchors: {} };
+  Object.keys(anchors).forEach(id => {
+    const a = anchors[id]; out.anchors[id] = { lat:a.lat, lon:a.lon, z:a.z };
+  });
+  const r = await fetch('/config', { method:'POST', body: JSON.stringify(out) });
+  alert(r.ok ? 'Saved. Live view will pick it up automatically.' : 'Save failed');
+};
+
+// Load any existing config so setup is editable, not start-from-scratch.
+fetch('/config').then(r=>r.json()).then(c => {
+  if (c.geo && c.geo.origin_lat) { origin = c.geo; map.setView([c.geo.origin_lat, c.geo.origin_lon], 19); }
+  const ids = Object.keys(c.anchors||{});
+  ids.forEach(id => { addAnchor(parseInt(id), c.anchors[id].lat, c.anchors[id].lon, c.anchors[id].z); });
+  if (ids.length) nextId = Math.max(...ids.map(Number)) + 1;
+  render();
+}).catch(()=>{});
+</script>
+</body>
+</html>
